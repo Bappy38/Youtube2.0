@@ -25,7 +25,7 @@ const Header = () => {
                     className="
                         px-4
                         py-2
-                        rounded-l-2xl
+                        rounded-l-full
                         text-black
                         border
                         border-gray-400
@@ -36,7 +36,7 @@ const Header = () => {
                 <button className="
                     px-4
                     py-2
-                    rounded-r-2xl
+                    rounded-r-full
                     bg-gray-200
                     hover:bg-gray-300
                     opacity-80
