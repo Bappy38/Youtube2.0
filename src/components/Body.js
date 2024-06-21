@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 const Body = () => {
 
     return (
-        <div className="flex">
+        <div className="">
             <Sidebar/>
             <BodyContainer/>
         </div>
