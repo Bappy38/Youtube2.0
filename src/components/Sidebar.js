@@ -1,8 +1,14 @@
 import { faSquareYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faClockRotateLeft, faFire, faGamepad, faGuitar, faHouse, faMusic, faPlay, faUsersRectangle, faVolleyball } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+
+    const isSidebarOpen = useSelector((store) => store.config.isSidebarOpen);
+
+    if (!isSidebarOpen)
+        return null;
 
     return (
         <div className="shadow-md p-2 text-base w-2/12 h-screen overflow-y-auto">

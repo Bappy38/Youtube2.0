@@ -6,12 +6,12 @@ const configSlice = createSlice({
         isSidebarOpen: false
     },
     reducers: {
-        changeSidebarOpenStatus: (state) => {
+        toggleSidebar: (state) => {
             state.isSidebarOpen = !state.isSidebarOpen;
         }
     }
 });
 
-export const { changeSidebarOpenStatus } = configSlice.actions;
+export const { toggleSidebar } = configSlice.actions;
 
 export default configSlice.reducer;

@@ -2,14 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { HamburgerIcon, Logo, UserIcon } from "../constants/AppConstants";
 import { useDispatch } from 'react-redux';
-import { changeSidebarOpenStatus } from '../store/configSlice';
+import { toggleSidebar } from '../store/configSlice';
 
 const Header = () => {
 
     const dispatch = useDispatch();
 
-    const handleSidebarOpenState = () => {
-        dispatch(changeSidebarOpenStatus());
+    const toggleSidebarHandler = () => {
+        dispatch(toggleSidebar());
     }
 
     return (
@@ -19,7 +19,7 @@ const Header = () => {
                     className="p-2 h-9 cursor-pointer hover:bg-gray-200 rounded-full"
                     alt="menu-icon"
                     src={HamburgerIcon}
-                    onClick={handleSidebarOpenState}
+                    onClick={toggleSidebarHandler}
                 />
 
                 <img
