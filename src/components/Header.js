@@ -1,15 +1,25 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { HamburgerIcon, Logo, UserIcon } from "../constants/AppConstants";
+import { useDispatch } from 'react-redux';
+import { changeSidebarOpenStatus } from '../store/configSlice';
 
 const Header = () => {
+
+    const dispatch = useDispatch();
+
+    const handleSidebarOpenState = () => {
+        dispatch(changeSidebarOpenStatus());
+    }
+
     return (
         <div className="flex items-center justify-between px-6 mt-2">
             <div className="flex items-center space-x-4">
                 <img
-                    className="h-8 cursor-pointer"
+                    className="p-2 h-9 cursor-pointer hover:bg-gray-200 rounded-full"
                     alt="menu-icon"
                     src={HamburgerIcon}
+                    onClick={handleSidebarOpenState}
                 />
 
                 <img
