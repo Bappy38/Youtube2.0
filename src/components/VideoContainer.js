@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import usePopularVideos from "../hooks/usePopularVideos";
 import VideoCard from "./VideoCard";
 
@@ -8,7 +9,12 @@ const VideoContainer = () => {
     return (
         <div className="flex flex-wrap ml-[15%]">
             {popularVideos.map(video => (
-                <VideoCard key={video.id} video={video}/>
+                <Link
+                    key={video.id}
+                    to={ `watch?v=${video.id}` }
+                >
+                    <VideoCard video={video}/>
+                </Link>
             ))}
         </div>
     );

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { HamburgerIcon, Logo } from "../constants/AppConstants";
 import { toggleSidebar } from "../store/configSlice";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
 
@@ -39,21 +40,25 @@ const Sidebar = () => {
                     onClick={toggleSidebarHandler}
                 />
 
-                <img
-                    className="h-8 cursor-pointer"
-                    alt="logo"
-                    src={Logo}
-                />
+                <Link to="/">
+                    <img
+                        className="h-8 cursor-pointer"
+                        alt="logo"
+                        src={Logo}
+                    />
+                </Link>
             </div>
 
             <div className="pt-14 px-3">
 
                 <div className="mt-4">
                     <ul>
-                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                            <FontAwesomeIcon className="mr-3" icon={faHouse} />
-                            Home
-                        </li>
+                        <Link to="/">
+                            <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                                <FontAwesomeIcon className="mr-3" icon={faHouse} />
+                                Home
+                            </li>
+                        </Link>
 
                         <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
                             <FontAwesomeIcon className="mr-3" icon={faPlay} />

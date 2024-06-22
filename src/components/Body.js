@@ -1,4 +1,4 @@
-import BodyContainer from "../components/BodyContainer";
+import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 
 const Body = () => {
@@ -6,7 +6,7 @@ const Body = () => {
     return (
         <div className="">
             <Sidebar/>
-            <BodyContainer/>
+            <Outlet/>
         </div>
     );
 }

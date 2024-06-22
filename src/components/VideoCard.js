@@ -2,7 +2,7 @@ import ReactTimeAgo from "react-time-ago";
 
 const VideoCard = ({video}) => {
 
-    console.log(video);
+    // console.log(video);
     const { snippet, statistics } = video;
     const { thumbnails, title, channelTitle, publishedAt } = snippet;
     const { viewCount } = statistics;

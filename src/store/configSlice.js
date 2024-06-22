@@ -8,10 +8,13 @@ const configSlice = createSlice({
     reducers: {
         toggleSidebar: (state) => {
             state.isSidebarOpen = !state.isSidebarOpen;
+        },
+        closeSidebar: (state) => {
+            state.isSidebarOpen = false;
         }
     }
 });
 
-export const { toggleSidebar } = configSlice.actions;
+export const { toggleSidebar, closeSidebar } = configSlice.actions;
 
 export default configSlice.reducer;

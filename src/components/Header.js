@@ -22,11 +22,13 @@ const Header = () => {
                     onClick={toggleSidebarHandler}
                 />
 
-                <img
-                    className="h-8 cursor-pointer"
-                    alt="logo"
-                    src={Logo}
-                />
+                <a href='/'>
+                    <img
+                        className="h-8 cursor-pointer"
+                        alt="logo"
+                        src={Logo}
+                    />
+                </a>
             </div>
 
             <div className="flex items-center w-5/12">
