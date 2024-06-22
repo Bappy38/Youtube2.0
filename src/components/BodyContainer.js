@@ -4,7 +4,7 @@ import VideoContainer from "../components/VideoContainer";
 const BodyContainer = () => {
 
     return (
-        <div>
+        <div className="pt-16">
             <ButtonList/>
             <VideoContainer/>
         </div>

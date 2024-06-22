@@ -1,9 +1,17 @@
 import { faSquareYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faCircleQuestion, faClockRotateLeft, faCommentDots, faFire, faFlag, faGamepad, faGear, faGuitar, faHouse, faMusic, faPlay, faUsersRectangle, faVolleyball } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { HamburgerIcon, Logo } from "../constants/AppConstants";
+import { toggleSidebar } from "../store/configSlice";
 
 const Sidebar = () => {
+
+    const dispatch = useDispatch();
+
+    const toggleSidebarHandler = () => {
+        dispatch(toggleSidebar());
+    }
 
     const isSidebarOpen = useSelector((store) => store.config.isSidebarOpen);
 
@@ -11,7 +19,33 @@ const Sidebar = () => {
         return null;
 
     return (
-        <div className="shadow-md px-2 text-base w-[20%] h-full overflow-y-auto bg-white fixed z-50">
+        <div className="
+            shadow-md
+            px-2
+            text-base
+            w-[20%]
+            h-full
+            overflow-y-auto
+            bg-white
+            fixed
+            z-50"
+        >
+
+        <div className="flex items-center px-4 py-3 space-x-4">
+            <img
+                className="p-2 h-9 cursor-pointer hover:bg-gray-200 rounded-full"
+                alt="menu-icon"
+                src={HamburgerIcon}
+                onClick={toggleSidebarHandler}
+            />
+
+            <img
+                className="h-8 cursor-pointer"
+                alt="logo"
+                src={Logo}
+            />
+        </div>
+
             <div className="mt-4">
                 <ul>
                     <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
@@ -76,7 +110,7 @@ const Sidebar = () => {
                 </ul>
             </div>
 
-            <div className="mt-2 mb-12 border-t">
+            <div className="mt-2 border-t">
                 <ul>
                     <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
                         <FontAwesomeIcon className="mr-3" icon={faGear} />
