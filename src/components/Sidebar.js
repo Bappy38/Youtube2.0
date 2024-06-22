@@ -25,114 +25,119 @@ const Sidebar = () => {
             text-base
             w-[20%]
             h-full
-            overflow-y-auto
             bg-white
             fixed
-            z-50"
+            z-50
+            custom-scrollbar"
         >
 
-        <div className="flex items-center px-4 py-3 space-x-4">
-            <img
-                className="p-2 h-9 cursor-pointer hover:bg-gray-200 rounded-full"
-                alt="menu-icon"
-                src={HamburgerIcon}
-                onClick={toggleSidebarHandler}
-            />
+            <div className="flex items-center px-4 py-3 space-x-4 fixed bg-white w-[20%]">
+                <img
+                    className="p-2 h-9 cursor-pointer hover:bg-gray-200 rounded-full"
+                    alt="menu-icon"
+                    src={HamburgerIcon}
+                    onClick={toggleSidebarHandler}
+                />
 
-            <img
-                className="h-8 cursor-pointer"
-                alt="logo"
-                src={Logo}
-            />
-        </div>
-
-            <div className="mt-4">
-                <ul>
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faHouse} />
-                        Home
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faPlay} />
-                        Shorts
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faSquareYoutube} />
-                        Subscription
-                    </li>
-                </ul>
+                <img
+                    className="h-8 cursor-pointer"
+                    alt="logo"
+                    src={Logo}
+                />
             </div>
 
-            <div className="mt-2 border-t">
-                <h1 className="px-3 py-2 font-semibold">You</h1>
-                <ul>
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faUsersRectangle} />
-                        Your Channel
-                    </li>
+            <div className="pt-14 px-3">
 
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faClockRotateLeft} />
-                        History
-                    </li>
+                <div className="mt-4">
+                    <ul>
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faHouse} />
+                            Home
+                        </li>
 
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faMusic} />
-                        Playlist
-                    </li>
-                </ul>
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faPlay} />
+                            Shorts
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faSquareYoutube} />
+                            Subscription
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="mt-2 border-t">
+                    <h1 className="px-3 py-2 font-semibold">You</h1>
+                    <ul>
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faUsersRectangle} />
+                            Your Channel
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faClockRotateLeft} />
+                            History
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faMusic} />
+                            Playlist
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="mt-2 border-t">
+                    <h1 className="px-3 py-2 font-semibold">Explore</h1>
+                    <ul>
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faFire} />
+                            Trending
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faGuitar} />
+                            Music
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faGamepad} />
+                            Gaming
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faVolleyball} />
+                            Sports
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="mt-2 border-t">
+                    <ul>
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faGear} />
+                            Settings
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faCircleQuestion} />
+                            Help
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faCommentDots} />
+                            Feedback
+                        </li>
+
+                        <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
+                            <FontAwesomeIcon className="mr-3" icon={faFlag} />
+                            Report History
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div className="mt-2 border-t">
-                <h1 className="px-3 py-2 font-semibold">Explore</h1>
-                <ul>
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faFire} />
-                        Trending
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faGuitar} />
-                        Music
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faGamepad} />
-                        Gaming
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faVolleyball} />
-                        Sports
-                    </li>
-                </ul>
-            </div>
-
-            <div className="mt-2 border-t">
-                <ul>
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faGear} />
-                        Settings
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faCircleQuestion} />
-                        Help
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faCommentDots} />
-                        Feedback
-                    </li>
-
-                    <li className="cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-200">
-                        <FontAwesomeIcon className="mr-3" icon={faFlag} />
-                        Report History
-                    </li>
-                </ul>
-            </div>
         </div>
     );
 }
