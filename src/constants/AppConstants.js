@@ -4,3 +4,7 @@ export const UserIcon = "https://www.iconpacks.net/icons/2/free-user-icon-3296-t
 export const buttonNames = [
     'All', 'News', 'Music', 'Movies', 'Drama', 'Sports', 'Animated Films', 'Live', 'Web Development', 'Programming', 'Recently Uploaded', 'New to you'
 ];
+
+export const YOUTUBE_VIEO_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=BD&key=[YOUR_API_KEY]";
+export const API_KEY_PLACEHOLDER = "[YOUR_API_KEY]";
+export const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
