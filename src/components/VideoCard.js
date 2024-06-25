@@ -41,7 +41,7 @@ const VideoCard = ({video}) => {
             <div className="text-gray-600 font-normal text-sm">
                 {getViewCountText()} views
                 <span className="mx-1">•</span>
-                <ReactTimeAgo date={publishedAt} locale="en-US"/>
+                <ReactTimeAgo date={new Date(publishedAt)} locale="en-US"/>
             </div>
         </div>
     );
