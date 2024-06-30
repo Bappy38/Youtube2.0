@@ -1,47 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { 
-    API_KEY_PLACEHOLDER,
-    API_OPTIONS,
-    GOOGLE_API_KEY,
+import {
     HamburgerIcon,
     Logo,
-    QUERY_PLACEHOLDER,
     UserIcon,
-    YOUTUBE_SEARCH_SUGGESTIONS_API
 } from "../constants/AppConstants";
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../store/configSlice';
-import { useEffect, useState } from 'react';
-import fetchJsonp from 'fetch-jsonp';
+import { useState } from 'react';
+import useSearchSuggestions from '../hooks/useSearchSuggestions';
 
 const Header = () => {
 
     const [ searchQuery, setSearchQuery ] = useState('');
-    const [ searchSuggestion, setSearchSuggestion ] = useState([]);
-
-    useEffect(() => {
-        
-        const timer = setTimeout(() => getSearchSuggestion(), 200);
-
-        return () => {
-            clearTimeout(timer);
-        }
-    }, [searchQuery]);
-
-    console.log(searchQuery);
-
-    const getSearchSuggestion = async () => {
-
-        const data = await fetchJsonp(
-            YOUTUBE_SEARCH_SUGGESTIONS_API
-                .replace(API_KEY_PLACEHOLDER, GOOGLE_API_KEY)
-                .replace(QUERY_PLACEHOLDER, searchQuery), 
-                API_OPTIONS
-            );
-        const json = await data.json();
-        setSearchSuggestion(json[1]);
-    }
+    const searchSuggestion = useSearchSuggestions(searchQuery);
 
     const dispatch = useDispatch();
 
@@ -109,7 +81,7 @@ const Header = () => {
                     fixed
                     bg-white
                     rounded-xl
-                    shadow
+                    shadow-lg
                     mt-1
                     py-3
                     border
