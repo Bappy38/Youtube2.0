@@ -5,7 +5,7 @@ Implemented a youtube like dashboard contains
 - Sidebar
 - Homepage consists of popular videos
 - Watchpage consists of video player, comment section and related videos section
-- Search functionality
+- Search functionality using debounce and redux store to reduce API calls
 - Shimmer UI
 
 # Explored about React
@@ -43,4 +43,4 @@ Implemented a youtube like dashboard contains
 - Shimmer UI for VideoContainer
 - Write detail about JsonP. And challenges faced around this topic
 
-0:44:00
+1:55:00
