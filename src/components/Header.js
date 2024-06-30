@@ -13,6 +13,8 @@ import useSearchSuggestions from '../hooks/useSearchSuggestions';
 const Header = () => {
 
     const [ searchQuery, setSearchQuery ] = useState('');
+    const [ showSearchSuggestion, setShowSearchSuggestion ] = useState(false);
+
     const searchSuggestion = useSearchSuggestions(searchQuery);
 
     const dispatch = useDispatch();
@@ -56,6 +58,8 @@ const Header = () => {
                                 w-full" 
                             placeholder="Search"
                             onChange={(e) => setSearchQuery(e.target.value)}
+                            onFocus={() => setShowSearchSuggestion(true)}
+                            onBlur={() => setShowSearchSuggestion(false)}
                         />
                     </div>
                     <div className='w-[10%]'>
@@ -77,7 +81,7 @@ const Header = () => {
                 </div>
                 
                 {
-                    searchSuggestion.length > 0 && (<div className='
+                    showSearchSuggestion && searchSuggestion.length > 0 && (<div className='
                     fixed
                     bg-white
                     rounded-xl
