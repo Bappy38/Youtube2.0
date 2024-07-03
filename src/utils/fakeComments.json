@@ -1,0 +1,162 @@
+[
+    {
+        "userName": "user1",
+        "avatar": "avatar1.png",
+        "likesCount": 10,
+        "postedAtUtc": "2024-01-01T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the first top-level comment.",
+        "replies": [
+            {
+                "userName": "user2",
+                "avatar": "avatar2.png",
+                "likesCount": 5,
+                "postedAtUtc": "2024-01-01T11:00:00Z",
+                "hasEdited": false,
+                "text": "This is a reply to the first comment.",
+                "replies": [
+                    {
+                        "userName": "user3",
+                        "avatar": "avatar3.png",
+                        "likesCount": 2,
+                        "postedAtUtc": "2024-01-01T12:00:00Z",
+                        "hasEdited": false,
+                        "text": "This is a reply to the reply.",
+                        "replies": [
+                            {
+                                "userName": "user4",
+                                "avatar": "avatar4.png",
+                                "likesCount": 1,
+                                "postedAtUtc": "2024-01-01T13:00:00Z",
+                                "hasEdited": false,
+                                "text": "This is a nested reply.",
+                                "replies": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "userName": "user5",
+        "avatar": "avatar5.png",
+        "likesCount": 8,
+        "postedAtUtc": "2024-01-02T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the second top-level comment.",
+        "replies": [
+            {
+                "userName": "user6",
+                "avatar": "avatar6.png",
+                "likesCount": 3,
+                "postedAtUtc": "2024-01-02T11:00:00Z",
+                "hasEdited": false,
+                "text": "This is a reply to the second comment.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "userName": "user7",
+        "avatar": "avatar7.png",
+        "likesCount": 12,
+        "postedAtUtc": "2024-01-03T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the third top-level comment.",
+        "replies": []
+    },
+    {
+        "userName": "user8",
+        "avatar": "avatar8.png",
+        "likesCount": 15,
+        "postedAtUtc": "2024-01-04T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the fourth top-level comment.",
+        "replies": []
+    },
+    {
+        "userName": "user9",
+        "avatar": "avatar9.png",
+        "likesCount": 7,
+        "postedAtUtc": "2024-01-05T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the fifth top-level comment.",
+        "replies": [
+            {
+                "userName": "user10",
+                "avatar": "avatar10.png",
+                "likesCount": 4,
+                "postedAtUtc": "2024-01-05T11:00:00Z",
+                "hasEdited": false,
+                "text": "This is a reply to the fifth comment.",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "userName": "user11",
+        "avatar": "avatar11.png",
+        "likesCount": 9,
+        "postedAtUtc": "2024-01-06T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the sixth top-level comment.",
+        "replies": []
+    },
+    {
+        "userName": "user12",
+        "avatar": "avatar12.png",
+        "likesCount": 6,
+        "postedAtUtc": "2024-01-07T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the seventh top-level comment.",
+        "replies": []
+    },
+    {
+        "userName": "user13",
+        "avatar": "avatar13.png",
+        "likesCount": 11,
+        "postedAtUtc": "2024-01-08T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the eighth top-level comment.",
+        "replies": []
+    },
+    {
+        "userName": "user14",
+        "avatar": "avatar14.png",
+        "likesCount": 13,
+        "postedAtUtc": "2024-01-09T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the ninth top-level comment.",
+        "replies": [
+            {
+                "userName": "user15",
+                "avatar": "avatar15.png",
+                "likesCount": 6,
+                "postedAtUtc": "2024-01-09T11:00:00Z",
+                "hasEdited": false,
+                "text": "This is a reply to the ninth comment.",
+                "replies": [
+                    {
+                        "userName": "user16",
+                        "avatar": "avatar16.png",
+                        "likesCount": 2,
+                        "postedAtUtc": "2024-01-09T12:00:00Z",
+                        "hasEdited": false,
+                        "text": "This is a reply to the reply.",
+                        "replies": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "userName": "user17",
+        "avatar": "avatar17.png",
+        "likesCount": 14,
+        "postedAtUtc": "2024-01-10T10:00:00Z",
+        "hasEdited": false,
+        "text": "This is the tenth top-level comment.",
+        "replies": []
+    }
+]

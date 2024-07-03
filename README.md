@@ -6,6 +6,7 @@ Implemented a youtube like dashboard contains
 - Homepage consists of popular videos
 - Watchpage consists of video player, comment section and related videos section
 - Search functionality using debounce and redux store to reduce API calls
+- N-level nesting comments
 - Shimmer UI
 
 # Explored about React
@@ -33,14 +34,17 @@ Implemented a youtube like dashboard contains
 
 <hr>
 
-
-
-# Completed till Machine Coding Interview && Building Youtube
-
 # TODO
+
+- Implement N-Layer nested Comment Section
+- Show Search Result based on Search
+
+# Improvement
 
 - Make WatchPage Exactly like youtube using Youtube APIs
 - Shimmer UI for VideoContainer
 - Write detail about JsonP. And challenges faced around this topic
+- We will only store last 50 search result. And remove the old entry if it exceeds 50
+- 
 
-1:55:00
+# Completed till Advance Features in Youtube
