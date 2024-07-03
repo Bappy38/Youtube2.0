@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { closeSidebar } from "../store/configSlice";
 import { useSearchParams } from "react-router-dom";
+import CommentsContainer from "./CommentsContainer";
+import VideoPlayer from "./VideoPlayer";
+import useVideoDetail from "../hooks/useVideoDetail";
 
 const WatchPage = () => {
 
@@ -14,20 +17,22 @@ const WatchPage = () => {
         dispatch(closeSidebar());
     }, []);
 
+    const videoDetail = useVideoDetail(videoId);
+
+    if (!videoDetail)
+        return;
+    
+    // const { title, description, channelTitle  } = videoDetail?.snippet;
+    // const { likeCount, viewCount } = videoDetail?.statistics;
+
     return (
         <div className="pt-20 pl-24">
-            <div className="mt-2 rounded-lg">
-                <iframe
-                    className="rounded-xl"
-                    width="660"
-                    height="400"
-                    src={"https://www.youtube.com/embed/" + videoId + "?rel=0&autoplay=1"}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen></iframe>
+            <VideoPlayer videoId={videoId}/>
+            <div className="w-[660px] mt-2">
+                <div className="font-semibold text-xl">{videoDetail?.snippet?.title}</div>
             </div>
+            {/* Channel Subscribe Like Share */}
+            <CommentsContainer videoId={videoId}/>
         </div>
     );
 }
