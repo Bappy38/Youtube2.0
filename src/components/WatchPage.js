@@ -38,7 +38,7 @@ const WatchPage = () => {
                 <div className="font-semibold text-xl">{videoDetail?.snippet?.title}</div>
             </div>
             <div className="flex mt-3 h-10">
-                <img className="h-11 w-11 cursor-pointer" alt="Logo" src={logoUrl} />
+                <img className="h-11 w-11 cursor-pointer rounded-full" alt="Logo" src={logoUrl} />
 
                 <div className="ml-3">
                     <h1 className="font-semibold cursor-pointer">{channelTitle}</h1>
