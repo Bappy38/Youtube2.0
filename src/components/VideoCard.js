@@ -1,22 +1,11 @@
 import ReactTimeAgo from "react-time-ago";
+import { toFormattedNumber } from "../utils/toFormattedNumber";
 
 const VideoCard = ({video}) => {
 
-    // console.log(video);
     const { snippet, statistics } = video;
     const { thumbnails, title, channelTitle, publishedAt } = snippet;
     const { viewCount } = statistics;
-
-    const getViewCountText = () => {
-
-        if (viewCount >= 1e9)
-            return `${(viewCount / 1e9).toFixed(1)}B`;
-        if (viewCount >= 1e6)
-            return `${(viewCount / 1e6).toFixed(1)}M`;
-        if (viewCount >= 1e3)
-            return `${(viewCount / 1e3).toFixed(0)}K`;
-        return viewCount;
-    }
 
     if (!video || !thumbnails?.standard?.url)
         return null;
@@ -39,7 +28,7 @@ const VideoCard = ({video}) => {
             <div className=" text-gray-600 font-normal text-sm">{channelTitle}</div>
 
             <div className="text-gray-600 font-normal text-sm">
-                {getViewCountText()} views
+                {toFormattedNumber(viewCount)} views
                 <span className="mx-1">•</span>
                 <ReactTimeAgo date={new Date(publishedAt)} locale="en-US"/>
             </div>

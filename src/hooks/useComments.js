@@ -8,7 +8,7 @@ const useComments = (videoId) => {
 
     useEffect(() => {
         fetchComments();
-    }, []);
+    }, [ videoId ]);
 
     const fetchComments = async () => {
 

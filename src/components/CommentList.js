@@ -3,15 +3,10 @@ import Comment from "./Comment";
 const CommentList = ({isTopLevelComment, comments}) => {
 
     return (
-        <div>
+        <div className="ml-1">
             <div>
-                {isTopLevelComment && comments.map((comment) => (
-                    <Comment key={comment.id} comment={comment.snippet.topLevelComment.snippet}></Comment>
-                ))}
-            </div>
-            <div>
-                {!isTopLevelComment && comments.map((comment) => (
-                    <Comment key={comment.id} comment={comment.snippet}></Comment>
+                {comments.map((comment) => (
+                    <Comment key={comment.id} isTopLevelComment={isTopLevelComment} comment={comment}></Comment>
                 ))}
             </div>
         </div>
