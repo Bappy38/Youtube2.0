@@ -1,33 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { appendMessage } from "../store/chatSlice";
-import { getIncrementalId, getRandomName, getRandomSentence } from "../utils/randomGenerator";
+import { getIncrementalId } from "../utils/randomGenerator";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import useLiveChat from "../hooks/useLiveChat";
 
 const LiveChat = () => {
 
     const dispatch = useDispatch();
     const messages = useSelector((store) => store.chat.messages);
 
+    useLiveChat();
+
     const [ messageToSend, setMessageToSend ] = useState('');
-
-    useEffect(() => {
-
-        const interval = setInterval(() => {
-            
-            // console.log("API Polling");
-            dispatch(appendMessage({
-                id: getIncrementalId(),
-                userIconUrl: '',
-                userName: getRandomName(),
-                text: getRandomSentence()
-            }));
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
 
     const handleSendMessage = () => {
         dispatch(appendMessage({
