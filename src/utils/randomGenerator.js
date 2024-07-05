@@ -13,7 +13,6 @@ const nameList = [
     'Game','Donkey','Mule','Colt',
     'Cult','Cultist','Magnum', 'Gun'
 ];
-
 export function getRandomName() {
    return nameList[Math.floor( Math.random() * nameList.length )];
 };
@@ -35,7 +34,12 @@ const sentenceList = [
     "While on the first date he accidentally hit his head on the beam.",
     "She was too busy always talking about what she wanted to do to actually do any of it."
 ]
-
 export function getRandomSentence() {
     return sentenceList[Math.floor( Math.random() * sentenceList.length )];
  };
+
+ 
+ var incrementalId = 0;
+ export function getIncrementalId() {
+    return ++incrementalId;
+ }
