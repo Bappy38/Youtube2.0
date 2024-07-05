@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { appendMessage } from "../store/chatSlice";
+import { getRandomName, getRandomSentence } from "../utils/randomGenerator";
 
 const LiveChat = () => {
 
@@ -18,8 +19,8 @@ const LiveChat = () => {
             dispatch(appendMessage({
                 id: ++count,
                 userIconUrl: '',
-                userName: 'Bappy38',
-                text: 'Dummy Message ' + count
+                userName: getRandomName(),
+                text: count + " - " + getRandomSentence()
             }));
         }, 1000);
 
