@@ -1,11 +1,16 @@
 import ReactTimeAgo from "react-time-ago";
 import { toFormattedNumber } from "../utils/toFormattedNumber";
+import useChannelInfo from "../hooks/useChannelInfo";
+import { UserIcon } from "../constants/AppConstants";
 
 const VideoCard = ({video}) => {
 
     const { snippet, statistics } = video;
-    const { thumbnails, title, channelTitle, publishedAt } = snippet;
+    const { thumbnails, title, channelTitle, channelId, publishedAt } = snippet;
     const { viewCount } = statistics;
+
+    // Disabled to avoid lots of API call
+    // const { logoUrl } = useChannelInfo(channelId);
 
     if (!video || !thumbnails?.standard?.url)
         return null;
@@ -19,18 +24,23 @@ const VideoCard = ({video}) => {
                     src={thumbnails?.standard?.url}/>
             </div>
 
-            <div 
-                className="mt-2 text-lg font-semibold line-clamp-2"
-            >
-                {title}
-            </div>
+            <div className="flex mt-2">
+                <img className="h-11 w-11 cursor-pointer rounded-full" alt="Logo" src={UserIcon} />
+                <div className="ml-3">
+                    <div 
+                        className="text-lg font-semibold line-clamp-2"
+                    >
+                        {title}
+                    </div>
 
-            <div className=" text-gray-600 font-normal text-sm">{channelTitle}</div>
+                    <div className=" text-gray-600 font-normal text-sm">{channelTitle}</div>
 
-            <div className="text-gray-600 font-normal text-sm">
-                {toFormattedNumber(viewCount)} views
-                <span className="mx-1">•</span>
-                <ReactTimeAgo date={new Date(publishedAt)} locale="en-US"/>
+                    <div className="text-gray-600 font-normal text-sm">
+                        {toFormattedNumber(viewCount)} views
+                        <span className="mx-1">•</span>
+                        <ReactTimeAgo date={new Date(publishedAt)} locale="en-US"/>
+                    </div>
+                </div>
             </div>
         </div>
     );
