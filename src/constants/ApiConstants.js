@@ -3,7 +3,7 @@ export const YOUTUBE_VIDEO_DETAIL_API = "https://youtube.googleapis.com/youtube/
 export const YOUTUBE_COMMENTS_API = "https://www.googleapis.com/youtube/v3/commentThreads?key=[YOUR_API_KEY]&textFormat=plainText&part=snippet%2Creplies&videoId=[VIDEO_ID]&maxResults=50";
 export const YOUTUBE_SEARCH_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=[QUERY]&key=[YOUR_API_KEY]";
 export const YOUTUBE_CHANNEL_API = "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=[CHANNEL_ID]&key=[YOUR_API_KEY]";
-export const YOUTUBE_SEARCH_SUGGESTIONS_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=[QUERY]";
+export const YOUTUBE_SEARCH_SUGGESTIONS_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=[QUERY]";
 export const YOUTUBE_SEARCH_SUGGESTIONS_API_2 = "https://clients1.google.com/complete/search?client=youtube&gs_ri=youtube&ds=yt&q=[QUERY]"
 
 export const API_KEY_PLACEHOLDER = "[YOUR_API_KEY]";
