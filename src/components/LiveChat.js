@@ -16,7 +16,7 @@ const LiveChat = () => {
                 Live Chat
             </div>
 
-            <div className="px-5">
+            <div className="">
                 <ChatMessage/>
                 <ChatMessage/>
                 <ChatMessage/>

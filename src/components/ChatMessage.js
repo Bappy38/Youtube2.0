@@ -3,7 +3,7 @@ import { UserIcon } from "../constants/AppConstants";
 const ChatMessage = () => {
 
     return (
-        <div className="flex mt-2">
+        <div className="flex mt-2 cursor-pointer px-5 hover:bg-gray-200">
             <div>
                 <img alt="UserProfileImage" src={UserIcon} className="h-7" />
             </div>
