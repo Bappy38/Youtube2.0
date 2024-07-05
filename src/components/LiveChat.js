@@ -10,13 +10,14 @@ const LiveChat = () => {
             h-full
             ml-7
             rounded-lg
-            overflow-auto">
+            flex
+            flex-col">
             
             <div className="border-b border-slate-300 py-3 px-5">
                 Live Chat
             </div>
 
-            <div className="">
+            <div className="overflow-auto">
                 <ChatMessage/>
                 <ChatMessage/>
                 <ChatMessage/>
