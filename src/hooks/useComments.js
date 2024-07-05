@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { API_KEY_PLACEHOLDER, GOOGLE_API_KEY, VIDEO_ID_PLACEHOLDER, YOUTUBE_COMMENTS_API } from "../constants/AppConstants";
+import { useEffect, useState } from "react";
+import { API_KEY_PLACEHOLDER, GOOGLE_API_KEY, VIDEO_ID_PLACEHOLDER, YOUTUBE_COMMENTS_API } from "../constants/ApiConstants";
 
 
 const useComments = (videoId) => {

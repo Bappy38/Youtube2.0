@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API_KEY_PLACEHOLDER, GOOGLE_API_KEY, VIDEO_ID_PLACEHOLDER, YOUTUBE_VIDEO_DETAIL_API } from "../constants/AppConstants";
+import { API_KEY_PLACEHOLDER, GOOGLE_API_KEY, VIDEO_ID_PLACEHOLDER, YOUTUBE_VIDEO_DETAIL_API } from "../constants/ApiConstants";
 
 const useVideoDetail = (videoId) => {
 

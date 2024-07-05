@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { API_KEY_PLACEHOLDER, CHANNEL_ID_PLACEHOLDER, GOOGLE_API_KEY, YOUTUBE_CHANNEL_API } from "../constants/AppConstants";
+import { API_KEY_PLACEHOLDER, CHANNEL_ID_PLACEHOLDER, GOOGLE_API_KEY, YOUTUBE_CHANNEL_API } from "../constants/ApiConstants";
 
 const useChannelInfo = (channelId) => {
 

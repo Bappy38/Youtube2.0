@@ -1,9 +1,8 @@
 import fetchJsonp from "fetch-jsonp";
-import { useEffect, useState } from "react"
-import { API_KEY_PLACEHOLDER, API_OPTIONS, GOOGLE_API_KEY, QUERY_PLACEHOLDER, YOUTUBE_SEARCH_SUGGESTIONS_API } from "../constants/AppConstants";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cacheSearchSuggestion } from "../store/searchSlice";
-
+import { API_KEY_PLACEHOLDER, API_OPTIONS, GOOGLE_API_KEY, QUERY_PLACEHOLDER, YOUTUBE_SEARCH_SUGGESTIONS_API } from "../constants/ApiConstants";
 
 const useSearchSuggestions = (searchQuery) => {
 
