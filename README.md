@@ -8,6 +8,7 @@ Implemented a youtube like dashboard contains
 - Search functionality using debounce and redux store to reduce API calls
 - 2-level nesting comments
 - Shimmer UI
+- Live chat feature implemented (Infinite Scroll)
 
 # Explored about React
 
@@ -37,12 +38,7 @@ Implemented a youtube like dashboard contains
 # TODO
 
 - Show Search Result based on Search
-
-# Improvement
-
 - Make WatchPage Exactly like youtube using Youtube APIs
 - Shimmer UI for VideoContainer
 - Write detail about JsonP. And challenges faced around this topic
-- We will only store last 50 search result. And remove the old entry if it exceeds 50
-
-# Completed till Advance Features in Youtube
+- Only store last 50 search suggestion. And remove the old entry if it exceeds 50
