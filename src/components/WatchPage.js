@@ -6,6 +6,7 @@ import CommentsContainer from "./CommentsContainer";
 import VideoPlayer from "./VideoPlayer";
 import useVideoDetail from "../hooks/useVideoDetail";
 import useChannelInfo from "../hooks/useChannelInfo";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
 
@@ -29,7 +30,10 @@ const WatchPage = () => {
 
     return (
         <div className="pt-20 pl-24">
-            <VideoPlayer videoId={videoId} videoTitle={title} likeCount={likeCount} channelTitle={channelTitle} channelLogo={logoUrl} subscriberCount={subscriberCount}/>
+            <div className="flex mr-14 h-[525px]">
+                <VideoPlayer videoId={videoId} videoTitle={title} likeCount={likeCount} channelTitle={channelTitle} channelLogo={logoUrl} subscriberCount={subscriberCount}/>
+                <LiveChat/>
+            </div>
             <CommentsContainer commentCount={videoDetail?.statistics?.commentCount} videoId={videoId}/>
         </div>
     );
