@@ -6,4 +6,4 @@ export const buttonNames = [
     'All', 'News', 'Music', 'Movies', 'Drama', 'Sports', 'Animated Films', 'Live', 'Web Development', 'Programming', 'Recently Uploaded', 'New to you'
 ];
 
-export const LIVE_CHAT_OFFSET = 10;
+export const LIVE_CHAT_OFFSET = 20;

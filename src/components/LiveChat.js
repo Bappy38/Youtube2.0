@@ -21,7 +21,7 @@ const LiveChat = () => {
                 userName: 'Bappy38',
                 text: 'Dummy Message ' + count
             }));
-        }, 2000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, []);
