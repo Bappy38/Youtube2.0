@@ -1,5 +1,5 @@
 import ReactTimeAgo from "react-time-ago";
-import { toFormattedNumber } from "../utils/toFormattedNumber";
+import { toFormattedNumber } from "../utils/numberFormatter";
 import useChannelInfo from "../hooks/useChannelInfo";
 import { UserIcon } from "../constants/AppConstants";
 

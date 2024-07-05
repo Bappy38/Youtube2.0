@@ -1,6 +1,6 @@
 import { faThumbsDown, faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toFormattedNumber } from "../utils/toFormattedNumber";
+import { toFormattedNumber } from "../utils/numberFormatter";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
 
 const VideoPlayer = (props) => {

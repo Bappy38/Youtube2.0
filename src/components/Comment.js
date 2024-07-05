@@ -2,6 +2,7 @@ import ReactTimeAgo from "react-time-ago";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsDown, faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 import CommentList from "./CommentList";
+import { toFormattedPositiveNumber } from "../utils/numberFormatter";
 
 
 const Comment = ({isTopLevelComment, comment}) => {
@@ -25,18 +26,7 @@ const Comment = ({isTopLevelComment, comment}) => {
         textDisplay
     } = originalComment;
 
-    const getShortNumber = (number) => {
-
-        if (number >= 1e9)
-            return `${(number / 1e9).toFixed(1)}B`;
-        if (number >= 1e6)
-            return `${(number / 1e6).toFixed(1)}M`;
-        if (number >= 1e3)
-            return `${(number / 1e3).toFixed(0)}K`;
-        return number === 0 ? '' : number;
-    }
-
-    const likeCountText = getShortNumber(likeCount);
+    const likeCountText = toFormattedPositiveNumber(likeCount);
 
     return (
         <div>
