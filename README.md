@@ -5,10 +5,10 @@ Implemented a youtube like dashboard contains
 - Sidebar
 - Homepage consists of popular videos (with Infinite Scroll Feature)
 - Watchpage consists of video player, comment section and related videos section
-- Search functionality using debounce and redux store to reduce API calls
+- Search functionality using debounce and redux store to reduce search suggestion API calls
 - 2-level nesting comments
 - Shimmer UI
-- Live chat feature implemented
+- Live chat feature implemented for live videos
 
 # Explored about React
 
