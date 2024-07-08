@@ -7,7 +7,8 @@ const SearchResult = ({video}) => {
     console.log(video);
 
     const { snippet } = video;
-    const { title, description, channelTitle, channelId, publishedAt, thumbnails } = snippet;
+    const { title, description, liveBroadcastContent, channelTitle, channelId, publishedAt, thumbnails } = snippet;
+    const isLiveVideo = liveBroadcastContent === "live";
 
     if (!video)
         return null;
@@ -38,6 +39,13 @@ const SearchResult = ({video}) => {
                 </div>
 
                 <div className="text-gray-600">{description}</div>
+
+                { isLiveVideo && (
+                    <div className="mt-1">
+                        <button className="bg-red-700 text-white text-sm px-1">LIVE</button>
+                        <button className="ml-2 bg-gray-200 text-gray-500 px-1 text-sm font-medium">New</button>
+                    </div>
+                ) }
             </div>
         </div>
     );
