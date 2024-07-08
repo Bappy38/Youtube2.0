@@ -22,17 +22,21 @@ const WatchPage = () => {
     const videoDetail = useVideoDetail(videoId);
     const {channelTitle, logoUrl, subscriberCount} = useChannelInfo(videoDetail?.snippet?.channelId);
 
+    console.log(videoDetail);
+
     if (!videoDetail)
         return;
     
-    const { title, description, channelId  } = videoDetail?.snippet;
+    const { title, description, channelId, liveBroadcastContent } = videoDetail?.snippet;
     const { likeCount, viewCount, commentCount } = videoDetail?.statistics;
+
+    const isLiveVideo = liveBroadcastContent === "live";
 
     return (
         <div className="pt-20 pl-24">
             <div className="flex mr-14 h-[525px]">
                 <VideoPlayer videoId={videoId} videoTitle={title} likeCount={likeCount} channelTitle={channelTitle} channelLogo={logoUrl} subscriberCount={subscriberCount}/>
-                <LiveChat/>
+                {isLiveVideo && <LiveChat/>}
             </div>
             <CommentsContainer commentCount={videoDetail?.statistics?.commentCount} videoId={videoId}/>
         </div>

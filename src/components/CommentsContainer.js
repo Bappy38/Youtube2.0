@@ -7,8 +7,15 @@ const CommentsContainer = ({commentCount, videoId}) => {
 
     return (
         <div className="pt-5">
-            <h1 className="text-xl font-semibold">{commentCount} Comments</h1>
-            <CommentList comments={comments} isTopLevelComment={true}></CommentList>
+            {
+                comments?.length && 
+                    (
+                        <>
+                        <h1 className="text-xl font-semibold">{commentCount} Comments</h1>
+                        <CommentList comments={comments} isTopLevelComment={true}></CommentList>
+                        </>
+                    )
+            }
         </div>
     );
 };

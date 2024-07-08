@@ -11,7 +11,7 @@ const useLiveChat = () => {
 
         const interval = setInterval(() => {
 
-            console.log("CHAT API POLLING");
+            // console.log("CHAT API POLLING");
             dispatch(appendMessage(
                 {
                     id: getIncrementalId(),

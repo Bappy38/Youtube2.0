@@ -12,7 +12,7 @@ const chatSlice = createSlice({
 
             state.messages.splice(LIVE_CHAT_OFFSET, 1);
             state.messages.unshift(action.payload);
-            console.log(action.payload);
+            // console.log(action.payload);
         }
     }
 });

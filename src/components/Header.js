@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../store/configSlice';
 import { useState } from 'react';
 import useSearchSuggestions from '../hooks/useSearchSuggestions';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
@@ -16,8 +17,8 @@ const Header = () => {
     const [ showSearchSuggestion, setShowSearchSuggestion ] = useState(false);
 
     const searchSuggestion = useSearchSuggestions(searchQuery);
-
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const toggleSidebarHandler = () => {
         dispatch(toggleSidebar());
@@ -42,43 +43,48 @@ const Header = () => {
                 </a>
             </div>
 
-            <div className='items-center w-6/12'>
-                <div className="flex">
-                    <div className='w-[90%]'>
-                        <input
-                            type="text" 
-                            className="
-                                px-4
-                                py-2
-                                rounded-l-full
-                                text-black
-                                border
-                                border-gray-400
-                                focus:outline-none
-                                w-full" 
-                            placeholder="Search"
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            onFocus={() => setShowSearchSuggestion(true)}
-                            onBlur={() => setShowSearchSuggestion(false)}
-                        />
-                    </div>
-                    <div className='w-[10%]'>
-                        <button className="
+            <div
+                className='items-center w-6/12'>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        navigate(`/results?search_query=${searchQuery}`);
+                        setShowSearchSuggestion(false);
+                    }}
+                    onFocus={() => setShowSearchSuggestion(true)}
+                    onBlur={() => setShowSearchSuggestion(false)}
+                    className="flex">
+                    <input
+                        type="text" 
+                        className="
+                            w-[90%]
                             px-4
                             py-2
-                            rounded-r-full
-                            bg-gray-200
-                            hover:bg-gray-300
-                            opacity-80
+                            rounded-l-full
+                            text-black
                             border
                             border-gray-400
-                            focus:outline-none
-                            w-full"
-                        >
-                            <FontAwesomeIcon icon={faSearch} />
-                        </button>
-                    </div>
-                </div>
+                            focus:outline-none" 
+                        placeholder="Search"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    
+                    <button className="
+                        px-4
+                        py-2
+                        rounded-r-full
+                        bg-gray-200
+                        hover:bg-gray-300
+                        opacity-80
+                        border
+                        border-gray-400
+                        focus:outline-none
+                        w-[10%]"
+                    >
+                        <FontAwesomeIcon icon={faSearch} />
+                    </button>
+                </form>
                 
                 {
                     showSearchSuggestion && searchSuggestion.length > 0 && (<div className='
@@ -97,7 +103,11 @@ const Header = () => {
                                     <li 
                                         key={suggestion}
                                         className='px-4 py-2 cursor-default hover:bg-gray-200'
-                                        onClick={() => setSearchQuery(suggestion)}
+                                        onMouseDown={() => {
+                                            setSearchQuery(suggestion);
+                                            navigate(`/results?search_query=${suggestion}`);
+                                            setShowSearchSuggestion(false);
+                                        }}
                                     >
                                         {suggestion}
                                     </li>

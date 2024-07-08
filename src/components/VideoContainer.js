@@ -6,6 +6,9 @@ const VideoContainer = () => {
 
     const popularVideos = usePopularVideos();
 
+    if (!popularVideos)
+        return null;
+
     return (
         <div className="flex flex-wrap ml-[15%]">
             {popularVideos.map(video => (

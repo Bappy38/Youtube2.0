@@ -3,12 +3,12 @@
 Implemented a youtube like dashboard contains
 - Header
 - Sidebar
-- Homepage consists of popular videos
+- Homepage consists of popular videos (with Infinite Scroll Feature)
 - Watchpage consists of video player, comment section and related videos section
 - Search functionality using debounce and redux store to reduce API calls
 - 2-level nesting comments
 - Shimmer UI
-- Live chat feature implemented (Infinite Scroll)
+- Live chat feature implemented
 
 # Explored about React
 
@@ -37,8 +37,9 @@ Implemented a youtube like dashboard contains
 
 # TODO
 
-- Show Search Result based on Search
-- Make WatchPage Exactly like youtube using Youtube APIs
+- Implement infinite scroll feature on browse page
 - Shimmer UI for VideoContainer
+- Hold Subscribe, like button state in a state variable and give illusion that it's working
+- Show related videos in watch page
 - Write detail about JsonP. And challenges faced around this topic
 - Only store last 50 search suggestion. And remove the old entry if it exceeds 50
