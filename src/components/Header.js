@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../store/configSlice';
 import { useState } from 'react';
 import useSearchSuggestions from '../hooks/useSearchSuggestions';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
@@ -34,13 +34,13 @@ const Header = () => {
                     onClick={toggleSidebarHandler}
                 />
 
-                <a href='/'>
+                <Link to="/">
                     <img
                         className="h-8 cursor-pointer"
                         alt="logo"
                         src={Logo}
                     />
-                </a>
+                </Link>
             </div>
 
             <div
