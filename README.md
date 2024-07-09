@@ -38,7 +38,6 @@ Implemented a youtube like dashboard contains
 # TODO
 
 - Implement infinite scroll feature on browse page
-- Shimmer UI for VideoContainer
 - Hold Subscribe, like button state in a state variable and give illusion that it's working
 - Show related videos in watch page
 - Write detail about JsonP. And challenges faced around this topic

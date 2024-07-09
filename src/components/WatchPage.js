@@ -7,6 +7,7 @@ import VideoPlayer from "./VideoPlayer";
 import useVideoDetail from "../hooks/useVideoDetail";
 import useChannelInfo from "../hooks/useChannelInfo";
 import LiveChat from "./LiveChat";
+import WatchPageShimmer from "./WatchPageShimmer";
 
 const WatchPage = () => {
 
@@ -22,10 +23,10 @@ const WatchPage = () => {
     const videoDetail = useVideoDetail(videoId);
     const {channelTitle, logoUrl, subscriberCount} = useChannelInfo(videoDetail?.snippet?.channelId);
 
-    console.log(videoDetail);
+    // console.log(videoDetail);
 
     if (!videoDetail)
-        return;
+        return <WatchPageShimmer/>;
     
     const { title, description, channelId, liveBroadcastContent } = videoDetail?.snippet;
     const { likeCount, viewCount, commentCount } = videoDetail?.statistics;
