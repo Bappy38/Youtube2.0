@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
 import {
     HamburgerIcon,
     Logo,
@@ -44,7 +44,7 @@ const Header = () => {
             </div>
 
             <div
-                className='items-center w-6/12'>
+                className='items-center w-6/12 relative'>
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
@@ -69,6 +69,16 @@ const Header = () => {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
+
+                    {searchQuery && 
+                        <button
+                            type='button'
+                            className='absolute right-[10%] py-2 px-3 hover:bg-gray-300 rounded-full'
+                            onClick={() => setSearchQuery('')}
+                        >
+                            <FontAwesomeIcon icon={faXmark} />
+                        </button>
+                    }
                     
                     <button className="
                         px-4
