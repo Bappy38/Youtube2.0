@@ -2,10 +2,12 @@ import { faThumbsDown, faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { toFormattedNumber } from "../utils/numberFormatter";
 import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const VideoPlayer = (props) => {
 
     const { videoId, videoTitle, likeCount, channelTitle, channelLogo, subscriberCount  } = props;
+    const [ isSubscribe, setIsSubscribe ] = useState(false);
 
     return (
         <div className="">
@@ -37,17 +39,17 @@ const VideoPlayer = (props) => {
                     </div>
 
                     <button
-                        className="
-                            ml-5
-                            bg-gray-950
-                            text-white 
-                            font-medium 
-                            rounded-full
-                            px-4
-                            h-full"
+                        className={
+                            isSubscribe?
+                            "ml-5 bg-gray-300 text-black font-medium rounded-full px-4 h-full transform transition-transform scale-105 duration-300 ease-in"
+                            :
+                            "ml-5 bg-gray-950 text-white font-medium rounded-full px-4 h-full transform transition-transform scale-100 duration-300 ease-out"
+                        }
+                        onClick={() => setIsSubscribe(!isSubscribe)}
                     >
-                        Subscribe
+                        { isSubscribe? 'Subscribed' : 'Subscribe'}
                     </button>
+                    
                 </div>
 
                 <div className="flex ml-auto">
