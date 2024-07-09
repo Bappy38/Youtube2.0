@@ -3,7 +3,7 @@ import { API_KEY_PLACEHOLDER, GOOGLE_API_KEY, YOUTUBE_VIEO_API } from "../consta
 
 const usePopularVideos = () => {
 
-    const [ popularVideos, setPopularVideos ] = useState([]);
+    const [ popularVideos, setPopularVideos ] = useState(null);
 
     useEffect(() => {
         getVideos();
