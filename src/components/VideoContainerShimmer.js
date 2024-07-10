@@ -5,7 +5,7 @@ const VideoContainerShimmer = () => {
     return (
         <div className="ml-[15%] flex flex-wrap pb-10">
             {
-                Array.from({length: 6}).map((_, index) => (
+                Array.from({length: 12}).map((_, index) => (
 
                     <div key={index} className="mr-3 mt-7 w-[330px] animate-pulse">
                         <div className="bg-gray-300 h-[200px] rounded-xl">
