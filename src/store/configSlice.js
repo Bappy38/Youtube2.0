@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const configSlice = createSlice({
     name: 'config',
     initialState: {
-        isSidebarOpen: false
+        isSidebarOpen: false,
+        isLoading: false
     },
     reducers: {
         toggleSidebar: (state) => {
@@ -11,10 +12,16 @@ const configSlice = createSlice({
         },
         closeSidebar: (state) => {
             state.isSidebarOpen = false;
+        },
+        showLoader: (state) => {
+            state.isLoading = true;
+        },
+        hideLoader: (state) => {
+            state.isLoading = false;
         }
     }
 });
 
-export const { toggleSidebar, closeSidebar } = configSlice.actions;
+export const { toggleSidebar, closeSidebar, showLoader, hideLoader } = configSlice.actions;
 
 export default configSlice.reducer;

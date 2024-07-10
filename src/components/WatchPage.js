@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeSidebar } from "../store/configSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
@@ -21,12 +21,16 @@ const WatchPage = () => {
     }, []);
 
     const videoDetail = useVideoDetail(videoId);
+    const isLoading = useSelector((store) => store.config.isLoading);
     const {channelTitle, logoUrl, subscriberCount} = useChannelInfo(videoDetail?.snippet?.channelId);
 
     // console.log(videoDetail);
 
-    if (!videoDetail)
+    if (isLoading)
         return <WatchPageShimmer/>;
+
+    if (!videoDetail)
+        return null;
     
     const { title, description, channelId, liveBroadcastContent } = videoDetail?.snippet;
     const { likeCount, viewCount, commentCount } = videoDetail?.statistics;

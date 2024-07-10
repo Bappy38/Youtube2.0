@@ -2,15 +2,20 @@ import { Link } from "react-router-dom";
 import usePopularVideos from "../hooks/usePopularVideos";
 import VideoCard from "./VideoCard";
 import VideoContainerShimmer from "./VideoContainerShimmer";
+import { useSelector } from "react-redux";
 
 const VideoContainer = () => {
 
     const popularVideos = usePopularVideos();
+    const isLoading = useSelector((store) => store.config.isLoading);
 
-    if (!popularVideos)
+    if (isLoading)
         return (
             <VideoContainerShimmer/>
         );
+
+    if (!popularVideos)
+        return null;
 
     return (
         <div className="flex flex-wrap ml-[15%]">
