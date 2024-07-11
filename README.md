@@ -7,8 +7,8 @@ Implemented a youtube like dashboard contains
 - Watchpage consists of video player, comment section and related videos section
 - Search functionality using debounce and redux store to reduce search suggestion API calls
 - 2-level nesting comments
-- Shimmer UI
-- Live chat feature implemented for live videos
+- Show Shimmer UI when there're pending network calls
+- Infinite scroll live chat feature implemented for live videos
 
 # Explored about React
 

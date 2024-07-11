@@ -3,7 +3,7 @@
 const VideoContainerShimmer = () => {
 
     return (
-        <div className="ml-[15%] flex flex-wrap pb-10">
+        <div className="flex flex-wrap pb-10">
             {
                 Array.from({length: 12}).map((_, index) => (
 
