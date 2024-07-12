@@ -10,7 +10,7 @@ const useVideoDetail = (videoId) => {
 
     useEffect(() => {
         fetchVideoDetail();
-    }, []);
+    }, [videoId]);
 
     const fetchVideoDetail = async () => {
 
