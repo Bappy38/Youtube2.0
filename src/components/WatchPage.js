@@ -38,12 +38,14 @@ const WatchPage = () => {
     const isLiveVideo = liveBroadcastContent === "live";
 
     return (
-        <div className="pt-20 pl-24">
-            <div className="flex mr-14 h-[525px]">
-                <VideoPlayer videoId={videoId} videoTitle={title} likeCount={likeCount} channelTitle={channelTitle} channelLogo={logoUrl} subscriberCount={subscriberCount}/>
-                {isLiveVideo && <LiveChat/>}
+        <div className="pt-20 pl-20">
+            <div className="mr-14">
+                <div className="flex h-[525px]">
+                    <VideoPlayer videoId={videoId} videoTitle={title} likeCount={likeCount} channelTitle={channelTitle} channelLogo={logoUrl} subscriberCount={subscriberCount}/>
+                    {isLiveVideo && <LiveChat/>}
+                </div>
+                <CommentsContainer commentCount={videoDetail?.statistics?.commentCount} videoId={videoId}/>
             </div>
-            <CommentsContainer commentCount={videoDetail?.statistics?.commentCount} videoId={videoId}/>
         </div>
     );
 }
