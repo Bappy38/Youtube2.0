@@ -7,7 +7,7 @@ const VideoContainerShimmer = () => {
             {
                 Array.from({length: 12}).map((_, index) => (
 
-                    <div key={index} className="mr-3 mt-7 w-[330px] animate-pulse">
+                    <div key={index} className="mr-3 mt-7 w-[350px] animate-pulse">
                         <div className="bg-gray-300 h-[12rem] rounded-xl">
                         </div>
 
