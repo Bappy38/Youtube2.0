@@ -55,6 +55,10 @@ const Header = () => {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
+
+                        if (!searchQuery)
+                            return;
+
                         navigate(`/results?search_query=${searchQuery}`);
                         setShowSearchSuggestion(false);
                     }}
@@ -87,17 +91,18 @@ const Header = () => {
                         </button>
                     }
                     
-                    <button className="
-                        px-4
-                        py-2
-                        rounded-r-full
-                        bg-gray-200
-                        hover:bg-gray-300
-                        opacity-80
-                        border
-                        border-gray-400
-                        focus:outline-none
-                        w-[10%]"
+                    <button 
+                        className="
+                            px-4
+                            py-2
+                            rounded-r-full
+                            bg-gray-200
+                            hover:bg-gray-300
+                            opacity-80
+                            border
+                            border-gray-400
+                            focus:outline-none
+                            w-[10%]"
                     >
                         <FontAwesomeIcon icon={faSearch} />
                     </button>

@@ -69,7 +69,7 @@ const VideoContainer = () => {
             if (loaderRef.current) {
                 observer.unobserve(loaderRef.current);
             }
-        }
+        };
     }, [getVideos]);
 
     return (
