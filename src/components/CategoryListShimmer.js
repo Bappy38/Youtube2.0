@@ -1,4 +1,4 @@
-const ButtonListShimmer = () => {
+const CategoryListShimmer = () => {
 
     return (
         <div className="py-5 flex items-center justify-center mx-auto w-8/12">
@@ -25,4 +25,4 @@ const ButtonListShimmer = () => {
     );
 }
 
-export default ButtonListShimmer;
+export default CategoryListShimmer;

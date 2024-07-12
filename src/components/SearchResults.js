@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import useSearchResults from "../hooks/useSearchResults";
-import ButtonList from "./ButtonList";
 import SearchResult from "./SearchResult";
+import CategoryList from "./CategoryList";
 
 const SearchResults = () => {
 
@@ -15,7 +15,7 @@ const SearchResults = () => {
 
     return (
         <div className="pt-16">
-            <ButtonList/>
+            <CategoryList/>
             <div className="">
                 {searchResults.map(video => (
                     <Link

@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import ButtonList from "../components/ButtonList";
 import VideoContainer from "../components/VideoContainer";
 import { useEffect } from "react";
 import { closeSidebar } from "../store/configSlice";
+import CategoryList from "./CategoryList";
 
 const BodyContainer = () => {
 
@@ -15,7 +15,7 @@ const BodyContainer = () => {
 
     return (
         <div className="pt-16">
-            <ButtonList/>
+            <CategoryList/>
             <VideoContainer/>
         </div>
     );

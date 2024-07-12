@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGreaterThan, faLessThan } from "@fortawesome/free-solid-svg-icons";
 import useVideoCategories from "../hooks/useVideoCategories";
 import { useSelector } from "react-redux";
-import ButtonListShimmer from "./ButtonListShimmer";
+import Category from "./Category";
+import CategoryListShimmer from "./CategoryListShimmer";
 
 
-const ButtonList = () => {
+const CategoryList = () => {
 
     const buttonContainerRef = useRef(null);
     const videoCategories = useVideoCategories();
@@ -49,13 +49,13 @@ const ButtonList = () => {
     };
 
     if (isLoading)
-        return <ButtonListShimmer/>
+        return <CategoryListShimmer/>
 
     if (!videoCategories || videoCategories.length === 0)
         return null;
 
     return (
-        <div className="py-5 flex items-center justify-center mx-auto w-8/12">
+        <div className="py-5 flex items-center justify-center mx-[7%]">
             {canScrollLeft && 
                 (
                     <button
@@ -68,7 +68,7 @@ const ButtonList = () => {
 
             <div className="flex overflow-x-hidden scroll-smooth" ref={buttonContainerRef}>
                 {videoCategories.map(category => (
-                    <Button
+                    <Category
                         key={category.id}
                         id={category.id}
                         name={category?.snippet?.title}
@@ -90,4 +90,4 @@ const ButtonList = () => {
     );
 }
 
-export default ButtonList;
+export default CategoryList;

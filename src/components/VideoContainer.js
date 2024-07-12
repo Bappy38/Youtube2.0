@@ -31,7 +31,7 @@ const VideoContainer = () => {
     
             const json = await data.json();
 
-            isInitialFetch? setPopularVideos(json.items) : setPopularVideos([...popularVideos, ...json.items]);
+            isInitialFetch? setPopularVideos(json?.items ?? []) : setPopularVideos([...popularVideos, ...json.items]);
             setNextPageToken(json.nextPageToken);
         } catch (error) {
             console.error(error);
