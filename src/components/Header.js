@@ -26,7 +26,7 @@ const Header = () => {
     }
 
     return (
-        <div className="flex items-center justify-between px-6 py-3 fixed w-full bg-white">
+        <div className="flex items-center justify-between px-6 py-3 fixed w-full bg-white z-50">
             <div className="flex items-center space-x-4">
                 <img
                     className="p-2 h-9 cursor-pointer hover:bg-gray-200 rounded-full"

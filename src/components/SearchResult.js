@@ -4,8 +4,6 @@ import { UserIcon, VerifiedIcon } from "../constants/AppConstants";
 
 const SearchResult = ({video}) => {
 
-    console.log(video);
-
     const { snippet } = video;
     const { title, description, liveBroadcastContent, channelTitle, channelId, publishedAt, thumbnails } = snippet;
     const isLiveVideo = liveBroadcastContent === "live";

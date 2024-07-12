@@ -40,9 +40,9 @@ const VideoPlayer = (props) => {
                     <button
                         className={
                             isSubscribe?
-                            "ml-5 bg-gray-300 text-black font-medium rounded-full px-4 h-full transform transition-transform scale-105 duration-300 ease-in"
+                            "ml-5 bg-gray-300 text-black font-medium rounded-full px-4 h-full transform transition-transform scale-105 duration-300 ease-in z-0"
                             :
-                            "ml-5 bg-gray-950 text-white font-medium rounded-full px-4 h-full transform transition-transform scale-100 duration-300 ease-out"
+                            "ml-5 bg-gray-950 text-white font-medium rounded-full px-4 h-full transform transition-transform scale-100 duration-300 ease-out z-0"
                         }
                         onClick={() => setIsSubscribe(!isSubscribe)}
                     >

@@ -6,6 +6,9 @@ const RelatedVideos = ({categoryId}) => {
 
     const relatedVideos = useRelatedVideos(categoryId);
 
+    if(!relatedVideos)
+        return null;
+
     return (
         <div className="mr-2">
             {
