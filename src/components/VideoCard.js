@@ -10,7 +10,7 @@ const VideoCard = ({video}) => {
     const { viewCount } = statistics;
 
     // Disabled to avoid lots of API call
-    // const { logoUrl } = useChannelInfo(channelId);
+    const { logoUrl } = useChannelInfo(channelId);
 
     if (!video || !thumbnails?.standard?.url)
         return null;
@@ -25,7 +25,7 @@ const VideoCard = ({video}) => {
             </div>
 
             <div className="flex mt-2">
-                <img className="h-11 w-11 cursor-pointer rounded-full" alt="Logo" src={UserIcon} />
+                <img className="h-11 w-11 cursor-pointer rounded-full" alt="Logo" src={logoUrl} />
                 <div className="ml-3">
                     <div 
                         className="text-lg font-semibold line-clamp-2"
