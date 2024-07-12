@@ -31,7 +31,7 @@ const Comment = ({isTopLevelComment, comment}) => {
     return (
         <div>
             <div className="pt-5 flex">
-                <div>
+                <div className="flex-shrink-0">
                     <img
                         className="w-9 h-9 cursor-pointer rounded-full"
                         alt="user-icon"
