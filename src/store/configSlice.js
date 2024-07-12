@@ -4,7 +4,8 @@ const configSlice = createSlice({
     name: 'config',
     initialState: {
         isSidebarOpen: false,
-        isLoading: false
+        isLoading: false,
+        selectedCategoryId: 0
     },
     reducers: {
         toggleSidebar: (state) => {
@@ -18,10 +19,16 @@ const configSlice = createSlice({
         },
         hideLoader: (state) => {
             state.isLoading = false;
+        },
+        setSelectedCategoryId: (state, action) => {
+            state.selectedCategoryId = action.payload;
+        },
+        resetSelectedCategoryId: (state) => {
+            state.selectedCategoryId = 0
         }
     }
 });
 
-export const { toggleSidebar, closeSidebar, showLoader, hideLoader } = configSlice.actions;
+export const { toggleSidebar, closeSidebar, showLoader, hideLoader, setSelectedCategoryId, resetSelectedCategoryId } = configSlice.actions;
 
 export default configSlice.reducer;

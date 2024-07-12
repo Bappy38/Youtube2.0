@@ -4,11 +4,12 @@ import VideoContainerShimmer from "./VideoContainerShimmer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { hideLoader, showLoader } from "../store/configSlice";
-import { API_KEY_PLACEHOLDER, GOOGLE_API_KEY, PAGE_TOKEN_PLACEHOLDER, YOUTUBE_VIEO_API } from "../constants/ApiConstants";
+import { API_KEY_PLACEHOLDER, CATEGORY_ID_PLACEHOLDER, GOOGLE_API_KEY, PAGE_TOKEN_PLACEHOLDER, VIDEO_CATEGORY_ID_PARAMS, YOUTUBE_VIEO_API } from "../constants/ApiConstants";
 
 const VideoContainer = () => {
 
     const isLoading = useSelector((store) => store.config.isLoading);
+    const selectedCategoryId = useSelector((store) => store.config.selectedCategoryId);
 
     const dispatch = useDispatch();
     const loaderRef = useRef(null);
@@ -16,9 +17,33 @@ const VideoContainer = () => {
     const [ nextPageToken, setNextPageToken ] = useState('');
     const [ popularVideos, setPopularVideos ] = useState([]);
 
+    const getVideos = async (isInitialFetch) => {
+
+        dispatch(showLoader());
+
+        try {
+            const requestUrl = YOUTUBE_VIEO_API
+                .replace(API_KEY_PLACEHOLDER, GOOGLE_API_KEY)
+                .replace(PAGE_TOKEN_PLACEHOLDER, isInitialFetch? '' : nextPageToken)
+                .replace(CATEGORY_ID_PLACEHOLDER, selectedCategoryId);
+
+            const data = await fetch(requestUrl);
+    
+            const json = await data.json();
+
+            isInitialFetch? setPopularVideos(json.items) : setPopularVideos([...popularVideos, ...json.items]);
+            setNextPageToken(json.nextPageToken);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            dispatch(hideLoader());
+        }
+    }
+
     useEffect(() => {
-        getVideos();
-    }, []);
+        console.log('First page fetched');
+        getVideos(true);
+    }, [selectedCategoryId]);
 
     useEffect(() => {
 
@@ -30,7 +55,8 @@ const VideoContainer = () => {
             
             const target = entries[0];
             if (target.isIntersecting && nextPageToken) {
-                getVideos();
+                console.log('Next page fetched');
+                getVideos(false);
             }
         });
 
@@ -44,31 +70,10 @@ const VideoContainer = () => {
                 observer.unobserve(loaderRef.current);
             }
         }
-    }, [ nextPageToken ]);
-
-    const getVideos = async () => {
-
-        dispatch(showLoader());
-
-        try {
-            const data = await fetch(
-                YOUTUBE_VIEO_API
-                .replace(API_KEY_PLACEHOLDER, GOOGLE_API_KEY)
-                .replace(PAGE_TOKEN_PLACEHOLDER, nextPageToken)
-            );
-    
-            const json = await data.json();
-            setPopularVideos([...popularVideos, ...json.items]);
-            setNextPageToken(json.nextPageToken);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            dispatch(hideLoader());
-        }
-    }
+    }, [getVideos]);
 
     return (
-        <div className="flex flex-wrap ml-[15%]">
+        <div className="flex flex-wrap ml-[7%]">
             {popularVideos.map(video => (
                 <Link
                     key={video.id}

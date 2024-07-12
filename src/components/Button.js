@@ -1,9 +1,14 @@
+import { useDispatch } from "react-redux";
+import { setSelectedCategoryId } from "../store/configSlice";
 
-const Button = ({name}) => {
+const Button = ({id, name}) => {
+
+    const dispatch = useDispatch();
 
     return (
         <div>
             <button
+                onClick={() => dispatch(setSelectedCategoryId(id))}
                 className="
                     bg-gray-200
                     px-3

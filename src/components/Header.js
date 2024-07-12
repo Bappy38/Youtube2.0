@@ -6,10 +6,10 @@ import {
     UserIcon,
 } from "../constants/AppConstants";
 import { useDispatch } from 'react-redux';
-import { toggleSidebar } from '../store/configSlice';
+import { resetSelectedCategoryId, toggleSidebar } from '../store/configSlice';
 import { useState } from 'react';
 import useSearchSuggestions from '../hooks/useSearchSuggestions';
-import { Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
@@ -19,6 +19,7 @@ const Header = () => {
     const searchSuggestion = useSearchSuggestions(searchQuery);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleSidebarHandler = () => {
         dispatch(toggleSidebar());
@@ -34,13 +35,19 @@ const Header = () => {
                     onClick={toggleSidebarHandler}
                 />
 
-                <Link to="/">
                     <img
                         className="h-8 cursor-pointer"
                         alt="logo"
                         src={Logo}
+                        onClick={(e) => {
+                            if (location.pathname === '/') {
+                                e.preventDefault();
+                                dispatch(resetSelectedCategoryId());
+                            } else {
+                                navigate('/');
+                            }
+                        }}
                     />
-                </Link>
             </div>
 
             <div

@@ -16,8 +16,8 @@ const VideoCard = ({video}) => {
         return null;
 
     return (
-        <div className="w-[330px] m-[6px]">
-            <div className="h-[11.6rem] overflow-hidden">
+        <div className="w-[350px] m-[6px]">
+            <div className="h-[12rem] overflow-hidden">
                 <img 
                     className="rounded-xl object-cover h-full w-full"
                     alt="Thumbnail" 

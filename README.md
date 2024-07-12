@@ -8,7 +8,8 @@ Implemented a youtube like dashboard contains
 - Search functionality using debounce and redux store to reduce search suggestion API calls
 - 2-level nesting comments
 - Show Shimmer UI when there're pending network calls
-- Infinite scroll live chat feature implemented for live videos
+- Infinite scroll live chat feature implemented for live videos. Will store a fixed number of message at max at a time in redux store to avoid UI crash.
+- Categorywise video browsing
 
 # Explored about React
 
@@ -37,8 +38,7 @@ Implemented a youtube like dashboard contains
 
 # TODO
 
-- Implement infinite scroll feature on browse page
-- Hold Subscribe, like button state in a state variable and give illusion that it's working
 - Show related videos in watch page
+- Make video player responsive for big screen
 - Write detail about JsonP. And challenges faced around this topic
 - Only store last 50 search suggestion. And remove the old entry if it exceeds 50
