@@ -7,7 +7,7 @@ const useRelatedVideos = (categoryId) => {
 
     useEffect(() => {
         getVideos();
-    }, []);
+    }, [categoryId]);
 
     const getVideos = async () => {
 
