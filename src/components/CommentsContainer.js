@@ -6,7 +6,7 @@ const CommentsContainer = ({commentCount, videoId}) => {
     const comments = useComments(videoId);
 
     return (
-        <div className="pt-5 w-[60%]">
+        <div className="pt-5 w-full">
             {
                 comments?.length && 
                     (

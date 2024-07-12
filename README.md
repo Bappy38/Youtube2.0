@@ -18,6 +18,7 @@ Implemented a youtube like dashboard contains
 - Hooks
     - React Hooks: `useState`, `useRef`, `useEffect`
     - Redux Hooks: `useSelector`, `useDispatch`
+    - React Router DOM: `useNavigate`, `useLocation`
 - Creating Custom Hooks
 - Routing (`react-router-dom`)
 - State Management
@@ -33,12 +34,3 @@ Implemented a youtube like dashboard contains
 - How to deploy a react app in Vercel
 - How to deploy a react app in AWS
     - Using AWS Amplify with CI/CD
-
-<hr>
-
-# TODO
-
-- Show related videos in watch page
-- Make video player responsive for big screen
-- Write detail about JsonP. And challenges faced around this topic
-- Only store last 50 search suggestion. And remove the old entry if it exceeds 50

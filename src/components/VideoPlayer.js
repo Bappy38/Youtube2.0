@@ -10,7 +10,7 @@ const VideoPlayer = (props) => {
     const [ isSubscribe, setIsSubscribe ] = useState(false);
 
     return (
-        <div className="w-[60%]">
+        <div className="w-full">
             <div className="rounded-lg">
                 <iframe
                     className="rounded-xl w-full"
@@ -23,7 +23,7 @@ const VideoPlayer = (props) => {
                     allowFullScreen></iframe>
             </div>
 
-            <div className="w-[660px] mt-2">
+            <div className="mt-2">
                 <div className="font-semibold text-xl">{videoTitle}</div>
             </div>
             <div className="flex mt-3 h-10 mx-auto">

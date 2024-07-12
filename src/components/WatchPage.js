@@ -8,6 +8,7 @@ import useVideoDetail from "../hooks/useVideoDetail";
 import useChannelInfo from "../hooks/useChannelInfo";
 import LiveChat from "./LiveChat";
 import WatchPageShimmer from "./WatchPageShimmer";
+import RelatedVideos from "./RelatedVideos";
 
 const WatchPage = () => {
 
@@ -32,19 +33,28 @@ const WatchPage = () => {
     if (!videoDetail)
         return null;
     
-    const { title, description, channelId, liveBroadcastContent } = videoDetail?.snippet;
+    const { title, description, channelId, categoryId, liveBroadcastContent } = videoDetail?.snippet;
     const { likeCount, viewCount, commentCount } = videoDetail?.statistics;
 
     const isLiveVideo = liveBroadcastContent === "live";
 
     return (
-        <div className="pt-20 pl-20">
-            <div className="mr-14">
-                <div className="flex h-[525px]">
-                    <VideoPlayer videoId={videoId} videoTitle={title} likeCount={likeCount} channelTitle={channelTitle} channelLogo={logoUrl} subscriberCount={subscriberCount}/>
+        <div className="pt-20 pl-20 flex w-full">
+            <div className="mr-5 w-[60%] flex-shrink-0">
+                <div className="flex h-[525px] w-full">
+                    <VideoPlayer
+                        videoId={videoId}
+                        videoTitle={title}
+                        likeCount={likeCount}
+                        channelTitle={channelTitle}
+                        channelLogo={logoUrl}
+                        subscriberCount={subscriberCount}/>
                     {isLiveVideo && <LiveChat/>}
                 </div>
                 <CommentsContainer commentCount={videoDetail?.statistics?.commentCount} videoId={videoId}/>
+            </div>
+            <div className="flex-shrink-0">
+                <RelatedVideos categoryId={categoryId}/>
             </div>
         </div>
     );
