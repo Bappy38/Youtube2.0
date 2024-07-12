@@ -49,12 +49,12 @@ const WatchPage = () => {
                         channelTitle={channelTitle}
                         channelLogo={logoUrl}
                         subscriberCount={subscriberCount}/>
-                    {isLiveVideo && <LiveChat/>}
                 </div>
                 <CommentsContainer commentCount={videoDetail?.statistics?.commentCount} videoId={videoId}/>
             </div>
             <div className="flex-shrink-0">
-                <RelatedVideos categoryId={categoryId}/>
+                {!isLiveVideo && <RelatedVideos categoryId={categoryId}/>}
+                {isLiveVideo && <LiveChat/>}
             </div>
         </div>
     );

@@ -28,9 +28,10 @@ const LiveChat = () => {
 
     return (
         <div className="
+            w-[400px]
+            h-[500px]
             border
             border-slate-300
-            w-full
             ml-7
             rounded-lg
             flex
