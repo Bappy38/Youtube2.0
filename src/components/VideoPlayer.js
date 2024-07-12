@@ -10,11 +10,10 @@ const VideoPlayer = (props) => {
     const [ isSubscribe, setIsSubscribe ] = useState(false);
 
     return (
-        <div className="">
+        <div className="w-[60%]">
             <div className="rounded-lg">
                 <iframe
-                    className="rounded-xl"
-                    width="660"
+                    className="rounded-xl w-full"
                     height="400"
                     src={"https://www.youtube.com/embed/" + videoId + "?rel=0&autoplay=1"}
                     title="YouTube video player"
