@@ -1,36 +1,38 @@
-# What I have done in this project?
+# Youtube2.0
 
-Implemented a youtube like dashboard contains
-- Header
-- Sidebar
-- Homepage consists of popular videos (with Infinite Scroll Feature)
-- Watchpage consists of video player, comment section and related videos section
-- Search functionality using debounce and redux store to reduce search suggestion API calls
-- 2-level nesting comments
-- Show Shimmer UI when there're pending network calls
-- Infinite scroll live chat feature implemented for live videos. Will store a fixed number of message at max at a time in redux store to avoid UI crash.
-- Categorywise video browsing
+In this project, I developed a YouTube-like dashboard with the following features:
 
-# Explored about React
+**Features Implemented**
 
-- Functional Component
-- Props
-- Hooks
+- **Header**: A responsive header with navigation elements.
+- **Sidebar**: A collapsible sidebar for easy navigation.
+- **Homepage**: Displays popular videos with an infinite scroll feature.
+- **Watch Page**: Includes a video player, comment section, and related videos section.
+- **Search Functionality**: Uses debounce and Redux store to optimize search suggestions and reduce API calls.
+- **Nested Comments**: Supports 2-level nested comments.
+- **Shimmer UI**: Displays shimmer effects during pending network calls.
+- **Live Chat**: Implements infinite scroll for live video chats, maintaining a fixed number of messages in the Redux store to avoid UI crashes.
+- **Category-wise Browsing**: Allows browsing videos by categories.
+
+**Technologies Explored**
+
+- **React**
+  - Functional Components
+  - Props
+  - Hooks:
     - React Hooks: `useState`, `useRef`, `useEffect`
     - Redux Hooks: `useSelector`, `useDispatch`
     - React Router DOM: `useNavigate`, `useLocation`
-- Creating Custom Hooks
-- Routing (`react-router-dom`)
-- State Management
+  - Creating Custom Hooks
+  - Routing with `react-router-dom`
+  - State Management
 
-# Explored apart from React
+- **Other Technologies**
+  - Tailwind CSS
+  - Redux Store
+  - YouTube API Integration
 
-- Tailwind CSS
-- Redux Store
-- Youtube API Integration
+**Deployment**
 
-# Explored regarding Cloud
-
-- How to deploy a react app in Vercel
-- How to deploy a react app in AWS
-    - Using AWS Amplify with CI/CD
+- Deployed the React app on Vercel.
+- Deployed the React app on AWS using AWS Amplify with CI/CD.
