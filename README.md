@@ -1,4 +1,4 @@
-# Youtube2.0
+# FunTube
 
 In this project, I developed a YouTube-like dashboard with the following features:
 
